@@ -1,0 +1,28 @@
+{
+  "key": "all-addon",
+  "baseUrl": "${local.server.host}",
+  "name": "Atlassian Connect Spring Boot Example",
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled"
+  },
+  "scopes": [
+        "READ", "WRITE"
+   ],
+  "modules": {
+      "webPanels": [
+          {
+              "url": "/viewproduct",
+            "location": "atl.jira.view.issue.right.context",
+            "weight": 50,
+            "name": {
+              "value": "To do"
+            },
+            "key": "issue-todos-panel"          
+          }
+      ]
+  }
+}
